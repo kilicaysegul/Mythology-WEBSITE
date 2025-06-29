@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1a1a1a, #333333);
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .top-bar {
+      width: 100%;
+      padding: 15px 20px;
+      background: #00ffff;
+      text-align: left;
+    }
+
+    .top-bar a {
+      color: #2B2B2B;
+      text-shadow: #de1f9e;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      transition: color 0.3s, background-color 0.3s;
+      padding: 8px 16px;
+      border-radius: 8px;
+    }
+
+    .top-bar a:hover {
+      color: #ffffff;
+      background-color: #008b8b;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px;
+      scroll-behavior: smooth;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 0 0 auto;
+      width: 250px;
+      height: 350px;
+      border-radius: 20px;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .info-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 70px;
+      padding: 50px 20px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(5px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      width: 90%;
+      color: white;
+      box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+      border: 1px solid #00ffff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    }
+
+    .info-card h2 {
+      margin-bottom: 15px;
+      color: #00ffff;
+      font-size: 1.8rem;
+    }
+
+    .info-card p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <a href="index.html">🏠 Homepage</a>
+  </div>
+
+  <h1>Choose Your Game</h1>
+
+  <div class="carousel">
+    <div class="card" style="background-image: url('ageof.jpg');"></div>
+    <div class="card" style="background-image: url('god.jpg');"></div>
+    <div class="card" style="background-image: url('origin.jpg');"></div>
+    <div class="card" style="background-image: url('bilmiyom.jpg');"></div>
+    <div class="card" style="background-image: url('rising.jpg');"></div>
+  </div>
+
+  <div class="info-section">
+    
+    <div class="info-card">
+      <h2>Age of Mythology</h2>
+      <p>
+        "Age of Mythology" invites players into a world where ancient gods and mythical creatures clash with mortals.
+        Drawing heavily from Greek, Egyptian, and Norse mythologies, the game shows how deeply mythology has inspired human creativity.
+        The game’s representation of legendary figures reminds us how myths continue to influence modern storytelling and game design.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h2>God of War</h2>
+      <p>
+        "God of War" reimagines Greek and Norse mythology in a dark, emotional narrative.
+        By blending ancient myths with modern action gameplay, it demonstrates mythology’s timeless relevance.
+        Characters like Kratos embody the universal themes of vengeance, redemption, and destiny, illustrating how myths are reborn through modern media.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h2>Assassin's Creed Odyssey</h2>
+      <p>
+        Set in Ancient Greece, "Assassin's Creed Odyssey" immerses players in a world filled with gods, myths, and epic heroes.
+        The game not only revives historical events but also integrates mythological elements, showing how mythology continues to shape popular culture.
+        It highlights how ancient beliefs influence today's concepts of heroism and morality.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h2>Titan Quest</h2>
+      <p>
+        "Titan Quest" draws players into a battle against the Titans and other creatures from Greek, Egyptian, and Asian myths.
+        The game reflects the human fascination with divine battles and supernatural legends.
+        Through its mythological framework, it reveals how ancient tales still spark imagination in today’s digital age.
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h2>Immortals Fenyx Rising</h2>
+      <p>
+        "Immortals Fenyx Rising" offers a colorful, humorous take on Greek mythology.
+        The game creatively reinterprets classic myths, making them accessible and entertaining for modern audiences.
+        It shows that even ancient stories can be continually reinvented, proving the enduring power of mythological narratives across generations.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

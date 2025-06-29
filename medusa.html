@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medusa</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0000;
+      color: white;
+    }
+
+    .hero-container {
+      position: relative;
+      text-align: left;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-title {
+      position: absolute;
+      top: 30px;
+      left: 50px;
+      color: white;
+      font-size: 56px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .medusa-content {
+      padding: 40px 60px;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #ffffff10;
+      color: white;
+      border: 2px solid white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: white;
+      color: #0f0000;
+    }
+
+    .sound-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body class="medusa-page">
+
+  <div class="hero-container">
+    <img src="medusa.jpg" alt="Medusa Görseli" class="hero-image">
+    <h1 class="hero-title">Medusa</h1>
+  </div>
+
+  <!-- Ses butonu -->
+  <div class="sound-section">
+    <button onclick="toggleAudio()" id="soundButton">🔊 <span class="note-icon">🎵</span> Hear medusa</button>
+  </div>
+
+  <div class="medusa-content">
+    <p>Medusa is one of the Gorgon sisters in Greek mythology. Her hair consists of snakes, and she has the power to turn anyone who looks directly into her eyes into stone. She was originally a beautiful woman, but was cursed by the goddess Athena and transformed into this terrifying form.</p>
+
+    <p>According to mythological sources, Medusa was with the sea god Poseidon in Athena’s temple. This enraged Athena, and she cursed Medusa. From that moment on, anyone who looked at her face turned to stone.</p>
+
+    <p>Medusa's end came at the hands of Perseus. Using a shield given by Athena as a mirror, Perseus avoided looking directly at Medusa and managed to behead her. Her head was later used as a weapon to turn enemies into stone.</p>
+
+    <p>Today, Medusa is frequently featured in art and literature as a symbol of both fear and protection. She remains one of the most recognized figures in mythology.</p>
+
+    <a href="index.html"><button>HOMEPAGE</button></a>
+  </div>
+
+  <audio id="medusaAudio" src="medusa.mp3"></audio>
+
+  <script>
+    let isPlaying = false;
+    const audio = document.getElementById("medusaAudio");
+    const soundButton = document.getElementById("soundButton");
+
+    function toggleAudio() {
+      if (isPlaying) {
+        audio.pause();
+        audio.currentTime = 0;
+        soundButton.innerHTML = "🔊 🎵 Play Sound";
+      } else {
+        audio.play();
+        soundButton.innerHTML = "🔇 🎵 Stop Sound";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    audio.onended = () => {
+      isPlaying = false;
+      soundButton.innerHTML = "🔊 🎵 Play Sound";
+    };
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+  
+  
+  

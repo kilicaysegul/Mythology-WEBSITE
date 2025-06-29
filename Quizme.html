@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greek Mythology Quiz</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fbe9e7;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .quiz-container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 2rem;
+    }
+
+    .quiz-image {
+      width: 150px;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      object-fit: contain;
+    }
+
+    .question {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .option-button {
+      background-color: #fbe9e7;
+      border: 2px solid #fbe9e7;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .option-button:hover {
+      background-color: #ffd5cd;
+      border-color: #ffab91;
+    }
+
+    .option-button.correct {
+      background-color: #a5d6a7;
+      border-color: #66bb6a;
+      color: white;
+    }
+
+    .option-button.wrong {
+      background-color: #ef9a9a;
+      border-color: #e57373;
+      color: white;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .home-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #c638a3;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .home-button:hover {
+      background-color: #c638a3;
+    }
+
+    .skip-button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #bf6908;
+      color: antiquewhite;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .skip-button:hover {
+      background-color: #64b5f6;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="quiz-container">
+  <h1>Greek Mythology Quiz</h1>
+
+  <!-- Komik Resim -->
+  <img src="funny.jpg" alt="Funny Greek Meme" class="quiz-image">
+
+  <div class="question" id="question">Loading...</div>
+  <div class="options" id="options"></div>
+  
+  <!-- Skip Button -->
+  <button class="skip-button" onclick="skipQuestion()">⏭ Skip the Question</button>
+
+  <div class="feedback" id="feedback"></div>
+
+  <!-- Homepage Butonu -->
+  <a href="index.html" class="home-button">🏠 Homepage</a>
+</div>
+
+<script>
+const quizData = [
+  {
+    question: "Who is the king of the Greek gods?",
+    options: ["Poseidon", "Zeus", "Hades", "Apollo"],
+    answer: "Zeus"
+  },
+  {
+    question: "In 'God of War', who is Kratos' father in Norse mythology?",
+    options: ["Odin", "Thor", "Zeus", "Baldur"],
+    answer: "Zeus"
+  },
+  {
+    question: "In 'Age of Mythology', which civilization worships Ra?",
+    options: ["Greek", "Norse", "Egyptian", "Atlantian"],
+    answer: "Egyptian"
+  },
+  {
+    question: "Who guided Odysseus during his journey home?",
+    options: ["Athena", "Hera", "Aphrodite", "Artemis"],
+    answer: "Athena"
+  },
+  {
+    question: "Which hero killed the Minotaur?",
+    options: ["Theseus", "Achilles", "Hercules", "Perseus"],
+    answer: "Theseus"
+  },
+  {
+    question: "In 'Assassin's Creed Odyssey', who is the main protagonist?",
+    options: ["Leonidas", "Kassandra", "Pericles", "Hippocrates"],
+    answer: "Kassandra"
+  },
+  {
+    question: "What is the name of the winged horse in Greek mythology?",
+    options: ["Pegasus", "Cerberus", "Hydra", "Medusa"],
+    answer: "Pegasus"
+  },
+  {
+    question: "In 'Immortals Fenyx Rising', who narrates the story?",
+    options: ["Zeus", "Hermes", "Prometheus", "Hades"],
+    answer: "Prometheus"
+  }
+];
+
+let currentQuestion = 0;
+
+function loadQuestion() {
+  const questionEl = document.getElementById('question');
+  const optionsEl = document.getElementById('options');
+  const feedbackEl = document.getElementById('feedback');
+
+  feedbackEl.innerText = '';
+  const currentData = quizData[currentQuestion];
+  questionEl.innerText = currentData.question;
+
+  optionsEl.innerHTML = '';
+
+  currentData.options.forEach(option => {
+    const button = document.createElement('button');
+    button.classList.add('option-button');
+    button.innerText = option;
+    button.onclick = () => checkAnswer(button, option);
+    optionsEl.appendChild(button);
+  });
+}
+
+function checkAnswer(button, selectedOption) {
+  const feedbackEl = document.getElementById('feedback');
+  const buttons = document.querySelectorAll('.option-button');
+  const correctAnswer = quizData[currentQuestion].answer;
+
+  buttons.forEach(btn => btn.disabled = true);
+
+  if (selectedOption === correctAnswer) {
+    button.classList.add('correct');
+    feedbackEl.innerText = 'Correct! ✅';
+    feedbackEl.style.color = '#66bb6a';
+  } else {
+    button.classList.add('wrong');
+    feedbackEl.innerText = 'Wrong! ❌';
+    feedbackEl.style.color = '#e57373';
+  }
+
+  setTimeout(() => {
+    nextQuestion();
+  }, 1500);
+}
+
+function skipQuestion() {
+  nextQuestion();
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizData.length) {
+    loadQuestion();
+  } else {
+    document.getElementById('question').innerText = 'Quiz Finished!';
+    document.getElementById('options').innerHTML = '';
+    document.getElementById('feedback').innerText = '';
+  }
+}
+
+loadQuestion();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

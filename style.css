@@ -1,0 +1,429 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #14342B;
+    padding: 15px 50px;
+}
+
+.logo a {
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-and-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.search-and-menu input[type="text"] {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item > a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 12px;
+}
+
+.menu-item:hover .submenu {
+    display: flex;
+}
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #234D32;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.submenu li {
+    padding: 8px 0;
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70vh;
+    background-color: #113741;
+    padding: 0 50px;
+}
+
+.hero-text {
+    color: white;
+}
+
+/* Üstteki küçük yazı */
+.hero-text .subtitle {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    letter-spacing: 2px;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+/* Ana başlık */
+.hero-text h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 55px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* OF kelimesinin altını çizmek için */
+.underline {
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+    text-decoration-thickness: 3.5px;
+    text-underline-offset: 9px;
+}
+
+
+
+
+.hero-image img {
+    width: 998px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+    /* Kenarlardan saydamlaşma efekti */
+    -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%);
+    mask-image: radial-gradient(circle, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 70%);
+    transform: translate(135px, 10px);
+}
+
+
+.buttons button {
+    margin-top: 20px;
+    margin-left: 80px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: 2px solid #D4AF37;
+    border-radius: 25px;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+
+.buttons button:hover {
+    background-color: #D4AF37;
+    color: black;
+}
+
+#did-you-know {
+    background-color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#did-you-know h4 {
+    color: #14342B;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+#did-you-know p {
+    color: #555;
+    font-size: 26px;
+}
+
+
+
+
+
+/* === GENEL === */
+.films-page {
+    background-color: #000; /* Siyah arka plan */
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #fff; /* Yazılar beyaz */
+}
+
+.films-title {
+    text-align: center;
+    font-size: 48px;
+    margin: 20px 0;
+    color: #fff; /* Başlık da beyaz */
+}
+
+/* === SLIDER === (aynı kalsın) */
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 75vh;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.slides {
+    position: relative;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(0.6);
+    z-index: 1;
+}
+
+.slide img {
+    position: relative;
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: none;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 3;
+}
+
+.slide-content h2 {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.watch-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.watch-btn:hover {
+    background-color: orange;
+}
+
+/* === OKLAR === */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* === KARTLAR === */
+.film-card-section {
+    margin-top: 50px;
+    padding: 0 20px;
+}
+
+.film-card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kart yanyana */
+    gap: 20px; /* Kartlar arasında boşluk */
+    padding: 20px;
+  }
+  
+  .film-card {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s;
+  }
+  
+  .film-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .film-card-content {
+    padding: 10px;
+  }
+  
+  .film-card-title {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .film-card-rating {
+    font-size: 1em;
+    margin-bottom: 5px;
+  }
+  
+  .film-card-description {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+  
+  .watch-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #e50914;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .watch-btn:hover {
+    background-color: #ff0a16;
+  }
+  
+  .film-card:hover {
+    transform: scale(1.05);
+  }
+  
+
+  
+
+  .mythology-info {
+    padding: 60px 40px;
+    background-color: #f5f5f5;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #2e2e2e;
+    margin-top: 50px;
+}
+
+.mythology-info h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #1c1c1c;
+    letter-spacing: 1px;
+}
+
+.styled-paragraph {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    text-align: justify;
+    text-indent: 40px;
+    position: relative;
+}
+
+.styled-paragraph::first-letter {
+    font-size: 48px;
+    font-weight: bold;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+    color: #4b2c20;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+

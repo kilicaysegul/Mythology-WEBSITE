@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Olympian Gods</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1c1b29; /* Gece gökyüzü teması */
+      color: #f8f3e8; /* Krem-beyaz yazı */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 36px;
+      background: linear-gradient(to right, #e9e2e2, #000000); /* Altın + gül tonu */
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .home-button {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      background-color: #d4af37;
+      color: #1c1b29;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .home-button:hover {
+      background-color: #f5d76e;
+    }
+
+    .gods-section {
+      padding: 40px 20px;
+    }
+
+    .god-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 60px auto;
+      max-width: 1000px;
+      gap: 30px;
+      flex-wrap: wrap;
+      background-color: rgba(255, 255, 255, 0.04);
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .god-row.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .god-row:hover {
+      background-color: rgba(212, 175, 55, 0.15); /* Altın Hover */
+      transform: scale(1.02);
+    }
+
+    .god-text {
+      flex: 1;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .god-text h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #f8f3e8;
+    }
+
+    .god-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .god-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .god-row:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    .god-row:nth-child(odd) {
+      animation-delay: 0.4s;
+    }
+
+    .music {
+      text-align: center;
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+
+    audio {
+      width: 300px;
+      outline: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="home-button">Homepage</a>
+  <h1>THE OLYMPIAN GODS</h1>
+
+  <div class="gods-section">
+    <!-- Zeus -->
+    <div class="god-row">
+      <div class="god-text">
+        <h3>Zeus</h3>
+        <p>King of the gods and ruler of Mount Olympus, Zeus was the supreme authority in the Greek pantheon. As the god of the sky, lightning, and thunder, he wielded the powerful thunderbolt, a symbol of his wrath and justice. He overthrew his father Cronus and freed his siblings from the Titan's stomach, establishing the rule of the Olympians. Though a wise and commanding ruler, Zeus was also known for his numerous love affairs with both mortal women and goddesses, resulting in many divine offspring. His actions often caused jealousy and conflict, especially with his wife Hera. Despite this, Zeus represented cosmic order, divine law, and the balance of power between gods and mortals.</p>
+      </div>
+      <div class="god-image">
+        <img src="zz.jpg" alt="Zeus">
+      </div>
+    </div>
+
+    <!-- Hera -->
+    <div class="god-row reverse">
+      <div class="god-text">
+        <h3>Hera</h3>
+        <p>Hera, queen of the gods and the goddess of marriage and family, was both regal and formidable. As the devoted yet long-suffering wife of Zeus, she frequently found herself responding to his infidelities with anger and vengeance. Many myths recount her punishments of Zeus’s lovers and their children, like Heracles. Despite her jealousies, Hera was deeply associated with the sanctity of marriage and was revered by women seeking blessings for fertility and childbirth. She symbolized loyalty, dignity, and feminine power within a patriarchal system. Her sacred animals included the peacock and cow, both representing beauty and motherhood. .</p>
+      </div>
+      <div class="god-image">
+        <img src="hera.jpg" alt="Hera">
+      </div>
+    </div>
+
+    <!-- Poseidon -->
+    <div class="god-row">
+      <div class="god-text">
+        <h3>Poseidon</h3>
+        <p>Poseidon, god of the sea, earthquakes, and horses, was one of the most powerful and volatile deities in Greek mythology. With his trident, he could stir storms, sink ships, or calm waters with a wave of his hand. As one of Zeus’s brothers, Poseidon vied for influence, even attempting to overthrow him at times. He created the first horse and was worshipped fervently by sailors and coastal cities. Despite his tempestuous personality, he was a god of great strength and creativity, building underwater palaces and shaping islands. His moods mirrored the sea—calm and nurturing one moment, violent and destructive the next.</p>
+      </div>
+      <div class="god-image">
+        <img src="pos.jpg" alt="Poseidon">
+      </div>
+    </div>
+
+    <!-- Athena -->
+    <div class="god-row reverse">
+      <div class="god-text">
+        <h3>Athena</h3>
+        <p>Athena, goddess of wisdom, war strategy, and crafts, was born miraculously from the forehead of Zeus, fully grown and clad in armor. Unlike Ares, who embodied chaotic violence, Athena represented intelligent warfare, justice, and the protection of cities. As the patron deity of Athens, she was admired for her wisdom, fairness, and guidance to heroes like Odysseus, Perseus, and Heracles. She invented many tools and crafts, including the bridle and weaving techniques, earning the respect of artisans. A virgin goddess, she stood as a symbol of independence and rational thought. The owl, a symbol of knowledge, and the olive tree, a gift she gave to Athens, are sacred to her..</p>
+      </div>
+      <div class="god-image">
+        <img src="at.jpg" alt="Athena">
+      </div>
+    </div>
+
+    <!-- Ares -->
+    <div class="god-row">
+      <div class="god-text">
+        <h3>Ares</h3>
+        <p>Ares, the god of war, embodied the brutal and chaotic aspects of battle. Unlike his sister Athena, who favored strategy and justice, Ares thrived on bloodshed and destruction. Though a powerful warrior, he was often portrayed as reckless and unpopular among both gods and mortals. His passionate and illicit affair with Aphrodite caused scandal on Mount Olympus, especially when exposed by her husband Hephaestus. Despite his flaws, Ares represented courage, raw strength, and the primal force of human conflict. In warlike regions such as Sparta, he was honored for his strength and warrior spirit.</p>
+      </div>
+      <div class="god-image">
+        <img src="ar.jpg" alt="Ares">
+      </div>
+    </div>
+
+    <!-- Artemis -->
+    <div class="god-row reverse">
+      <div class="god-text">
+        <h3>Artemis</h3>
+        <p> Artemis, goddess of the hunt, wilderness, and the moon, was the fierce and independent twin sister of Apollo. She roamed forests with her loyal nymphs, protecting wild animals and punishing those who disrespected nature. A virgin goddess, she guarded her chastity fiercely, turning Actaeon into a stag for seeing her bathing. Artemis also played a role in childbirth, easing labor pains and offering protection to young girls. Her connection to the moon emphasized her mystery and solitude, casting a silver light over the world’s darkest places. Bow in hand, she embodied purity, feminine strength, and the untamed spirit of the wild..</p>
+      </div>
+      <div class="god-image">
+        <img src="arto.jpg" alt="Artemis">
+      </div>
+    </div>
+
+    <!-- Demeter -->
+    <div class="god-row">
+      <div class="god-text">
+        <h3>Demeter</h3>
+        <p>Demeter, the nurturing goddess of agriculture and fertility, was central to the cycle of life and death. She taught humanity how to cultivate the earth and was revered for ensuring bountiful harvests. Her most poignant myth involves the abduction of her daughter, Persephone, by Hades. In her grief, Demeter let the earth wither, leading to the first winter. The eventual compromise—Persephone spending part of the year in the underworld—explained the seasons. Her deep love for her daughter and sorrow at their separation made her one of the most compassionate and human-like deities.</p>
+      </div>
+      <div class="god-image">
+        <img src="dem.jpg" alt="Demeter">
+      </div>
+    </div>
+
+    <!-- Dionysus -->
+    <div class="god-row reverse">
+      <div class="god-text">
+        <h3>Dionysus</h3>
+        <p>Dionysus, god of wine, revelry, theater, and transformation, was a complex and dual-natured figure. He brought joy, ecstasy, and liberation through wine and dance, yet could also bring madness and chaos. As the son of Zeus and the mortal Semele, he was twice-born—first from his mother and then from Zeus’s thigh, making him unique among gods. His followers, including maenads and satyrs, celebrated in wild festivals that broke societal norms. Dionysus also inspired drama and poetry, with theaters often built in his honor. He symbolized the thin line between order and frenzy, joy and suffering, life and death.</p>
+      </div>
+      <div class="god-image">
+        <img src="din.jpg" alt="Dionysus">
+      </div>
+    </div>
+
+    <!-- Hephaestus -->
+    <div class="god-row">
+      <div class="god-text">
+        <h3>Hephaestus</h3>
+        <p>Hephaestus, god of fire, blacksmiths, and artisans, was the divine craftsman of Olympus. Unlike the other gods, he was born lame and was cast from heaven by either Hera or Zeus, depending on the myth. Despite his disability, he built marvelous creations, from Achilles’s armor to automatons and the thrones of the gods. Married to Aphrodite, he was often humiliated by her infidelity with Ares, yet remained a noble and dedicated worker. He symbolized resilience, mastery of craft, and inner strength. Fire, both creative and destructive, was his sacred element.</p>
+      </div>
+      <div class="god-image">
+        <img src="hep.jpg" alt="Hephaestus">
+      </div>
+    </div>
+
+    <!-- Hermes -->
+    <div class="god-row reverse">
+      <div class="god-text">
+        <h3>Hermes</h3>
+        <p>Hermes, the quick-witted messenger of the gods, ruled over travelers, merchants, thieves, and communication. With his winged sandals and caduceus staff, he moved freely between the mortal and divine worlds, even guiding souls to the underworld. Born to Maia and Zeus, Hermes displayed cunning from infancy, stealing Apollo’s cattle and inventing the lyre on the same day. He served as a trickster, diplomat, and protector of boundaries—both physical and symbolic. Known for his eloquence and humor, Hermes embodied adaptability, intelligence, and the power of persuasion. He was beloved by both gods and mortals for his cleverness and helpfulness.</p>
+      </div>
+      <div class="god-image">
+        <img src="hermes.jpg" alt="Hermes">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
